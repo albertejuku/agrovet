@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="{% static 'products/style.css' %}">
+</head>
+<body>
+    <div class="root">
+        <div class="navigation">
+            nothing to see here
+        </div>
+    
+        <div class="products">
+            <div class="product-list">
+                {% for product in products %}
+                    <div class="product-card">
+                        <div class="img">
+                            <a href="{% url 'product_detail' product.pk %}">
+                                <img src="{{ product.image.url }}" alt="">
+                            </a>
+                        </div>
+                        <div class="prod-body">
+                            <div class="name">
+                                {{ product.name }}
+                            </div>
+                            <div class="desc">
+                                {{ product.description }}
+                            </div>
+                            <div class="moq">
+                                {% if product.MOQ %}
+                                {{ product.MOQ }}
+                                {% endif %}
+                            </div>
+                            <div class="price-cart">
+                                <div class="price">
+                                    {{ product.price }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="latest-products">
+    
+            </div>
+        </div>
+    </div>
+</body>
+</html>
