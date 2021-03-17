@@ -1,3 +1,4 @@
 # agrovet
 agrovet management website, still under construction
-estimated compeletion date on 1st January 2020
+
+Finished the main engine, remaining with the front end styles.
